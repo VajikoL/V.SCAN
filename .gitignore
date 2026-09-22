@@ -1,0 +1,17 @@
+# Ignore Python / tooling artifacts
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+dist/
+build/
+.mypy_cache/
+.ruff_cache/
+
+# Local V.SCAN data lives in ~/.vscan — never commit secrets
+.env
+*.db

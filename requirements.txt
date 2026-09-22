@@ -1,0 +1,10 @@
+click>=8.1
+rich>=13.7
+pyfiglet>=1.0
+python-nmap>=0.7.1
+scapy>=2.5
+requests>=2.31
+SQLAlchemy>=2.0
+Jinja2>=3.1
+PyYAML>=6.0
+pytest>=8.0
