@@ -8,13 +8,30 @@ OpenVAS/Nessus-class **CLI** assessment (no web GUI): discovery, nmap fingerprin
 Use only on networks you own or have explicit written permission to assess.
 ```
 
+**Requirements:** Linux · Python **3.11+** · `nmap` (optional: `arp-scan`)
+
 ## Install
 
 ```bash
-sudo apt install -y nmap arp-scan python3-venv
+sudo apt update
+sudo apt install -y nmap arp-scan python3 python3-venv git
 git clone https://github.com/VajikoL/V.SCAN.git
 cd V.SCAN
-sudo bash install.sh          # → vscan in PATH
+bash install.sh
+```
+
+After install the clone folder can be deleted — the app lives in `~/.local/share/vscan`.
+
+If `vscan: command not found`, add to `~/.bashrc` and reopen the terminal:
+
+```bash
+export PATH="$HOME/.local/bin:$PATH"
+```
+
+System-wide (optional):
+
+```bash
+sudo bash install.sh   # → /usr/local/bin/vscan
 ```
 
 ## Usage
@@ -36,6 +53,14 @@ Profiles: `quick` · `balanced` (default, light) · `deep` · `audit` (**MAX** �
 Optional SSH auth audit: `vscan scan 10.0.0.5 --profile audit --creds ~/.vscan/creds.yaml`
 
 Languages: `en` `ka` `ru` `de` `fr` `es` — `vscan --lang ru`
+
+## Uninstall
+
+```bash
+rm -f ~/.local/bin/vscan
+rm -rf ~/.local/share/vscan
+# system-wide: sudo rm -f /usr/local/bin/vscan /usr/local/share/vscan
+```
 
 ## License
 
